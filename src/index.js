@@ -10,12 +10,10 @@ const form = document.querySelector("#search-box");
 const countryList = document.querySelector(".country-list");
 const countryInfo = document.querySelector(".country-info");
 
-const renderCountryList = (countries) => {
-  
+const renderCountryList = (countries) => { 
   if (countries.length > 10) {
     return  Notiflix.Notify.info("Too many matches found. Please enter a more specific name.");
-  }
-  
+  } 
   if (countries.length === 1) {
     const markup = countries
       .map((country) => { 
@@ -41,11 +39,9 @@ const renderCountryList = (countries) => {
 form.addEventListener("input", _debounce((e) => {
   countryList.innerHTML = "";
   countryInfo.innerHTML = "";
-
   if(e.target.value.length > 0 && !e.target.value.match(LETTERS)){
     return Notiflix.Notify.failure("Only letters are allowed!");
   }
-
   if (e.target.value.length > 0) {
     let name = e.target.value.toString();
     fetchCountries(name)
