@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 import _debounce  from 'lodash.debounce';
 
 const DEBOUNCE_DELAY = 300;
-const LETTERS = /^[A-Za-z]+$/;
+const LETTERS = /^[A-Za-z ]+$/;
 
 const form = document.querySelector("#search-box");
 const countryList = document.querySelector(".country-list");
